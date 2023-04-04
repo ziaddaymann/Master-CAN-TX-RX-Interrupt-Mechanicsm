@@ -209,7 +209,7 @@ int main(void)
 	while (1)
 	{
 		/* USER CODE END WHILE */
-		HAL_Delay (1000);
+		HAL_DELAY (1000);
 		can_tx (0x030 , 1 , TX_DATA , 0);
 		TX_DATA[0] ^= 1;
 		/* USER CODE BEGIN 3 */

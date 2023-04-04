@@ -19,10 +19,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
-#define NO_ACC 0
-#define ACC 1
-
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -47,12 +43,7 @@
 CAN_HandleTypeDef hcan;
 
 /* USER CODE BEGIN PV */
-unsigned char TX_DATA[8] ;
-uint8_t Frameno = 0;
-unsigned char RX_DATA[8];
-uint32_t canid;
-uint8_t candlc;
-uint8_t speed;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -143,8 +134,7 @@ void HAL_CAN_TxMailbox0CompleteCallback (CAN_HandleTypeDef *hcan)
 
 void HAL_CAN_RxFifo0MsgPendingCallback (CAN_HandleTypeDef *hcan)
 {
-	can_rx (&canid ,&candlc ,RX_DATA ,0);
-	speed =RX_DATA[0];
+
 }
 
 void HAL_CAN_ErrorCallback(CAN_HandleTypeDef *hcan)
@@ -186,8 +176,6 @@ int main(void)
 	MX_GPIO_Init();
 	MX_CAN_Init();
 
-	CAN_RX_FILTER_init (0x3AB , 0x7FF);
-
 
 	if (HAL_CAN_ActivateNotification (&hcan , (CAN_IT_TX_MAILBOX_EMPTY | CAN_IT_RX_FIFO0_MSG_PENDING)) != HAL_OK )
 	{
@@ -195,23 +183,19 @@ int main(void)
 	}
 
 	if (HAL_CAN_Start(&hcan) != HAL_OK)
-	{
-		Error_Handler();
-	}
+	  {
+		  Error_Handler();
+	  }
 	/* USER CODE BEGIN 2 */
 
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
-
-	TX_DATA[0] = ACC;
 	while (1)
 	{
 		/* USER CODE END WHILE */
-		HAL_Delay (1000);
-		can_tx (0x030 , 1 , TX_DATA , 0);
-		TX_DATA[0] ^= 1;
+
 		/* USER CODE BEGIN 3 */
 	}
 	/* USER CODE END 3 */
