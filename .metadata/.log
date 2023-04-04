@@ -1,0 +1,16 @@
+!SESSION 2023-04-04 17:33:43.599 -----------------------------------------------
+eclipse.buildId=Version 1.12.0
+java.version=11.0.17
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_EG
+Framework arguments:  -keyring /Users/ziadayman/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/ziadayman/.eclipse_keyring
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-04-04 17:34:12.262
+!MESSAGE Log4j2 initialized with config file /Users/ziadayman/Desktop/Master-CAN-TX-RX-Interrupt-Mechanicsm/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-04-04 17:34:21.638
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-04-04 17:47:10.213
+!MESSAGE Indexed 'Interrupt_Mechanism' (17 sources, 78 headers) in 9.23 sec: 3,642 declarations; 13,168 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)
