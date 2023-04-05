@@ -93,7 +93,7 @@ void can_tx (uint32_t ID , uint8_t DLC , uint8_t* payload , uint8_t polling)
 
 }
 
-//Filters
+
 void CAN_RX_FILTER_init (uint16_t STD_FILTER_ID , uint16_t STD_FILTER_MASK)
 {
 	CAN_FilterTypeDef sFILTERCONFIG;
@@ -116,7 +116,7 @@ void CAN_RX_FILTER_init (uint16_t STD_FILTER_ID , uint16_t STD_FILTER_MASK)
 }
 
 
-//receive function
+
 void can_rx (uint32_t* ID , uint8_t* DLC , uint8_t* payload , uint8_t polling)
 {
 	CAN_RxHeaderTypeDef pHeader ;
